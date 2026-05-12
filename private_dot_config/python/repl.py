@@ -1,7 +1,7 @@
 import sys
 import subprocess
 
-uv_args = ["uv", "run", "--with", "ipython", "--with", "ptipython"]
+uv_args = ["uv", "run", "--with", "ipython", "--with", "ptpython"]
 python_args = ["python", "-q"]
 separator = "--"
 separator_found = False

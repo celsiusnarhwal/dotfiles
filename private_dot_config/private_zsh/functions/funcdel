@@ -12,5 +12,5 @@ if [[ "$1" == "funcdel" ]]
 then
 	echo "funcdel can't delete itself"
 else
-	rm "$ZDOTDIR/functions/$1"
+	gum confirm "Are you sure?" && rm "$ZDOTDIR/functions/$1" || true
 fi

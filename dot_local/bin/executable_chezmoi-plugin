@@ -1,6 +1,7 @@
 #!/usr/bin/env -S uvx xonsh
 
 import subprocess
+import string
 from pathlib import Path
 
 new_plugin_choice = "create new plugin"
@@ -11,7 +12,6 @@ choices = [file.name.split("-", 1)[1] for file in Path.cwd().glob("chezmoi-*")]
 choices.sort()
 choices.append(new_plugin_choice)
 
-
 selection = $(echo @("\n".join(choices)) | @error_ignore gum filter)
 
 if selection == new_plugin_choice:
@@ -21,9 +21,12 @@ if selection == new_plugin_choice:
 
 		if selection in choices:
 			print(f'\nThere\'s already a plugin called "{selection}".\n')
-			continue
+		elif not set(selection).issubset(string.ascii_lowercase + string.digits):
+			print("\nPlugin names may only contain lowercase letters and digits.")
+		else:
+			break
 
-		break
+		continue
 
 if not selection:
 	exit()

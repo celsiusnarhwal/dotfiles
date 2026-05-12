@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-curl -fsSL https://mise.run | sh
-
 path+="$HOME/.local/bin"
+
+curl -fsSL https://mise.run | sh
 
 {{ range .packages }}
 eval "{{ . }}"

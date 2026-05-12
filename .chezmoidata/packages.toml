@@ -1,5 +1,5 @@
 [packages]
-atuin = "curl -fsSL https://setup.atuin.sh | sh -s -- --non-interactive"
+atuin = "mise use -g atuin"
 starship = "mise use -g starship"
 uv = "mise use -g uv"
 bat = "mise use -g bat"

@@ -16,11 +16,11 @@ selection = $(echo @("\n".join(choices)) | @error_ignore gum filter)
 
 if selection == new_plugin_choice:
 	while True:
-		print("What should the command be called?")
+		print("What should the plugin be called?")
 		selection = $(@error_ignore gum input)
 
 		if selection in choices:
-			print("That name is already taken.")
+			print("\nThat name is already taken.\n")
 			continue
 
 		break

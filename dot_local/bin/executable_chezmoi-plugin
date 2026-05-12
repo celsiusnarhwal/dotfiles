@@ -17,7 +17,7 @@ selection = $(echo @("\n".join(choices)) | @error_ignore gum filter)
 if selection == new_plugin_choice:
 	while True:
 		print("What should the command be called?")
-		selection = $(gum input)
+		selection = $(@error_ignore gum input)
 
 		if selection in choices:
 			print("That name is already taken")

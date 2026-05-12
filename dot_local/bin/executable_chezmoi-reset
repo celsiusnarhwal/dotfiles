@@ -2,6 +2,10 @@
 
 import uuid
 
+if $(command -v gh-wrapper):
+	shopt -s expand_aliases
+	alias gh="gh-wrapper"
+
 cd $(chezmoi source-path)
 
 repo_name=$(gh repo view --json nameWithOwner --jq .nameWithOwner)

@@ -22,7 +22,7 @@ if selection == new_plugin_choice:
 		if selection in choices:
 			print(f'\nThere\'s already a plugin called "{selection}".\n')
 		elif not set(selection).issubset(string.ascii_lowercase + string.digits):
-			print("\nPlugin names may only contain lowercase letters and digits.")
+			print("\nPlugin names may only contain lowercase letters and digits.\n")
 		else:
 			break
 

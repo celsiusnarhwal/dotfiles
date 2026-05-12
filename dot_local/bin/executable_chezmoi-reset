@@ -1,4 +1,4 @@
-#!/usr/bin/env uvx xonsh
+#!/usr/bin/env -S uvx xonsh
 
 import uuid
 

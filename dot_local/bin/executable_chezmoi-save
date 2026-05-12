@@ -8,5 +8,3 @@ if !(chezmoi git -- diff --quiet).returncode != 0:
 	chezmoi git -- add -A && chezmoi git -- commit --allow-empty --allow-empty-message -m ""
 
 chezmoi git push
-
-# test

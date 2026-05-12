@@ -1,0 +1,9 @@
+[ -d $ANTIDOTE_DIR ] || git clone --depth=1 https://github.com/mattmc3/antidote $ANTIDOTE_DIR
+source $ANTIDOTE_DIR/antidote.zsh
+
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' list-colors 'di=1;38;2;171;104;255'
+zstyle ':autocomplete:*' min-input 0
+
+antidote load

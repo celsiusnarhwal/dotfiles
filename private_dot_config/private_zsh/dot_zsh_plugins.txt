@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# =====KEEP AT TOP=====
+zsh-users/zsh-syntax-highlighting
+marlonrichert/zsh-autocomplete
+# =====================
+
+ohmyzsh/ohmyzsh path:plugins/brew
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/direnv
+ohmyzsh/ohmyzsh path:plugins/pre-commit
+ohmyzsh/ohmyzsh path:plugins/gitignore
+ohmyzsh/ohmyzsh path:plugins/poetry kind:fpath
+ohmyzsh/ohmyzsh path:plugins/docker kind:fpath
+
+mattmc3/zfunctions
+mattmc3/zshrc.d
+
+celsiusnarhwal/zsh-plugins path:plugins/mise
+
+paulirish/git-open
+hlissner/zsh-autopair
+ianthehenry/zsh-autoquoter
+zpm-zsh/clipboard
+Tarrasch/zsh-autoenv
+
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+
+# =====KEEP AT BOTTOM=====
+atuinsh/atuin
+celsiusnarhwal/zsh-plugins path:plugins/starship
+# ========================

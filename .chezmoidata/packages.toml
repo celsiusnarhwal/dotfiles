@@ -1,0 +1,10 @@
+[packages]
+atuin = "curl -fsSL https://setup.atuin.sh | sh -s -- --non-interactive"
+starship = "mise use -g starship"
+uv = "mise use -g uv"
+bat = "mise use -g bat"
+eza = "mise use -g eza"
+pre-commit = "mise use -g pre-commit"
+micro = "mise use -g aqua:micro-editor/micro"
+gum = "mise use -g gum"
+gh = "mise use -g gh"

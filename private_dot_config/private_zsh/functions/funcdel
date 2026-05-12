@@ -1,0 +1,16 @@
+#!/bin/zsh
+##? TODO: Add description. Use ##? comments for funchelp docs.
+
+###
+### TODO: write your autoload function here.
+### WARNING: Do not add a 'function funcdel() {}' wrapper for autoloads.
+###
+
+# vim: ft=zsh sw=2 ts=2 et
+
+if [[ "$1" == "funcdel" ]]
+then
+	echo "funcdel can't delete itself"
+else
+	rm "$ZDOTDIR/functions/$1"
+fi

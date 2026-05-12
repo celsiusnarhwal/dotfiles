@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+# vim: ft=zsh sw=2 ts=2 et
+
+[[ -x $(command -v eza) ]] && eza --icons "$@" || ls "$@"

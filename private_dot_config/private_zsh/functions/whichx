@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# vim: ft=zsh sw=2 ts=2 et
+
+result=$(which "$@")
+
+if [[ "$result" == *"aliased to"* ]]
+then
+	echo ${result#*aliased to }
+else
+	echo "$result"
+fi

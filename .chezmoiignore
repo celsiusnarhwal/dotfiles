@@ -1,0 +1,11 @@
+**/.DS_Store
+**/.zwc
+**/.zwc.old
+**/*zcompdump*
+**/.zcompcache
+**/.zsh_history
+**/.zsh_sessions
+**..zcalc_history
+**/.iterm2
+**/zshrc.d/99_local.zsh
+**/.*_cache

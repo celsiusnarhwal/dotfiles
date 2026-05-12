@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+curl -fsSL https://mise.run | sh
+
+path+="$HOME/.local/bin"
+
+{{ range .packages }}
+eval "{{ . }}"
+{{ end }}

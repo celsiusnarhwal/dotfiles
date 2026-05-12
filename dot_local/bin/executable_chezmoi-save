@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-chezmoi add @(file for file in $(chezmoi managed -i files).split())
+chezmoi add $HOME/@(file for file in $(chezmoi managed -i files).split())
 
 if !(chezmoi git -- diff --quiet).returncode != 0:
 	chezmoi git -- add -A && chezmoi git -- commit --allow-empty --allow-empty-message -m ""

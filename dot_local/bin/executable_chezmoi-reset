@@ -1,0 +1,16 @@
+#!/usr/bin/env uvx xonsh
+
+import uuid
+
+cd $(chezmoi source-path)
+
+repo_name=$(gh repo view --json nameWithOwner --jq .nameWithOwner)
+
+if ![gum confirm f"Reset the commit history for  {repo_name}?"].returncode == 0:
+	git checkout --orphan @(uuid.uuid4().hex)
+	git add -A
+	git commit -m "Initial commit"
+	git branch -D main
+	git branch -m main
+	git push --force --set-upstream origin main
+	

@@ -1,0 +1,37 @@
+#!/usr/bin/env -S uvx xonsh
+
+import subprocess
+from pathlib import Path
+
+new_plugin_choice = "create new plugin"
+
+cd ~/.local/bin
+
+choices = [file.name.split("-", 1)[1] for file in Path.cwd().glob("chezmoi-*")]
+choices.sort()
+choices.append(new_plugin_choice)
+
+
+selection = $(echo @("\n".join(choices)) | @error_ignore gum filter)
+
+if selection == new_plugin_choice:
+	while True:
+		print("What should the command be called?")
+		selection = $(gum input)
+
+		if selection in choices:
+			print("That name is already taken")
+			continue
+
+		break
+
+if not selection:
+	exit()
+
+filename=$(echo chezmoi-@(selection))
+
+$EDITOR @(filename)
+
+if Path(filename).exists():
+	chmod +x @(filename)
+	chezmoi add @(filename)

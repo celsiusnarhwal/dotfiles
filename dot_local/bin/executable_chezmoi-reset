@@ -3,8 +3,7 @@
 import uuid
 
 if $(command -v gh-wrapper):
-	shopt -s expand_aliases
-	alias gh="gh-wrapper"
+	aliases["gh"] = "gh-wrapper"
 
 cd $(chezmoi source-path)
 

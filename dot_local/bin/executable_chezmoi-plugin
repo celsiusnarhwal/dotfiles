@@ -20,7 +20,7 @@ if selection == new_plugin_choice:
 		selection = $(@error_ignore gum input)
 
 		if selection in choices:
-			print(f'\nThere's already a plugin called "{selection}".\n')
+			print(f'\nThere\'s already a plugin called "{selection}".\n')
 			continue
 
 		break

@@ -5,6 +5,11 @@ zsh-users/zsh-syntax-highlighting
 marlonrichert/zsh-autocomplete
 # =====================
 
+mattmc3/zfunctions
+mattmc3/zshrc.d
+
+celsiusnarhwal/zsh-plugins path:plugins/mise
+
 ohmyzsh/ohmyzsh path:plugins/brew
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/direnv
@@ -12,11 +17,6 @@ ohmyzsh/ohmyzsh path:plugins/pre-commit
 ohmyzsh/ohmyzsh path:plugins/gitignore
 ohmyzsh/ohmyzsh path:plugins/poetry kind:fpath
 ohmyzsh/ohmyzsh path:plugins/docker kind:fpath
-
-mattmc3/zfunctions
-mattmc3/zshrc.d
-
-celsiusnarhwal/zsh-plugins path:plugins/mise
 
 paulirish/git-open
 hlissner/zsh-autopair

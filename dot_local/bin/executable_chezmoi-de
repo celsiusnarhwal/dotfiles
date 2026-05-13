@@ -1,5 +1,0 @@
-#!/bin/zsh
-
-data_dir=$(chezmoi source-path)/.chezmoidata
-file=$(ls "$data_dir" | gum filter)
-[[ -n "$file" ]] && "$EDITOR" "${data_dir}/${file}" || true

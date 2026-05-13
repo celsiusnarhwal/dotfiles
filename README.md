@@ -5,5 +5,5 @@ This repository hosts my Unix [dotfiles](https://wiki.archlinux.org/title/Dotfil
 Ensure `~/.local/bin` is on your system path, then:
 
 ```shell
-sh -c "$(curl -fsSL get.chezmoi.io)" -- -b ~/.local/bin
+sh -c "$(curl -fsSL get.chezmoi.io)" -- -b ~/.local/bin -- init --apply celsiusnarhwal
 ```

@@ -1,5 +1,7 @@
 #!/bin/zsh
 
-"$EDITOR" "$(chezmoi source-path)/.chezmoidata/packages.toml"
+fp="$(chezmoi source-path)/.chezmoidata/packages.toml"
 
-chezmoi save
+"$EDITOR" "$fp"
+
+chezmoi save "$fp"

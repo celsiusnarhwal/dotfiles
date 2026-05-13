@@ -1,7 +1,7 @@
 export ZSH_CUSTOM="$ZDOTDIR/zshrc.d"
 export ZFUNCIDR="$ZDOTDIR/functions"
 
-export EDITOR=fresh
+export EDITOR=micro
 export GPG_TTY=$(tty)
 export DIRENV_LOG_FORMAT=""
 export JETBRAINS_PROJECT=$([ -d ".idea" ] && echo "$PWD")

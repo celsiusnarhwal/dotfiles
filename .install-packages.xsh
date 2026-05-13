@@ -2,6 +2,7 @@ import functools
 import json
 import typing as t
 from collections import Counter
+from pathlib import Path
 
 from pydantic import BaseModel, Field, field_validator, TypeAdapter, validate_call
 
@@ -33,6 +34,8 @@ def get_commands(*pkgs: Package, commands: t.Annotated[list, Field(default_facto
 
     return commands
 
+if str(Path.home() / ".local/bin") not in $PATH:
+	raise Exception("~/.local/bin is not in your system path. Add it and try again.")
 
 for name, count in Counter(package.name for package in get_packages()).items():
     if count > 1:

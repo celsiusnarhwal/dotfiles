@@ -1,9 +1,0 @@
-This repository hosts my Unix [dotfiles](https://dotfiles.github.io/). You're welcome to look around, but know this repo isn't intended for consumption by people other than myself.
-
-### Installation
-
-Ensure `~/.local/bin` is on your system path, then:
-
-```shell
-sh -c "$(curl -fsSL get.chezmoi.io)" -- -b ~/.local/bin
-```

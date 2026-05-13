@@ -6,6 +6,8 @@ if [[ -n "$JETBRAINS_PROJECT" ]] then
 	cd "$JETBRAINS_PROJECT"
 elif [[ -d ".idea" ]] then
 	cd "$PWD"
+elif [[ -n "$VSCODE_PROJECT" ]] then
+	cd "$VSCODE_PROJECT"
 else
 	echo "No project found"
 fi

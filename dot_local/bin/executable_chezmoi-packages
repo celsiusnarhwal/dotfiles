@@ -4,4 +4,4 @@ fp="$(chezmoi source-path)/.chezmoidata/packages.toml"
 
 "$EDITOR" "$fp"
 
-chezmoi save "$fp"
+chezmoi add "$fp"

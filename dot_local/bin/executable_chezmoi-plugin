@@ -10,7 +10,7 @@ new_plugin_choice = "create new plugin"
 cd ~/.local/bin
 
 args = sys.argv[2:]
-print(args)
+print(sys.argv)
 
 choices = [file.name.split("-", 1)[1] for file in Path.cwd().glob("chezmoi-*")]
 choices.sort()

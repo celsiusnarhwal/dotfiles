@@ -1,5 +1,6 @@
 #!/usr/bin/env -S uvx xonsh
 
+
 from pathlib import Path
 
 chezmoi add $HOME/@(file for file in $(chezmoi managed -i files).split())

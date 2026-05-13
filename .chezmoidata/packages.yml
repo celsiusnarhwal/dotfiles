@@ -49,3 +49,7 @@ packages:
   - name: thefuck
     command: uv tool install thefuck --with setuptools --python 3.11
     after: ["uv"]
+
+  - name: glow
+    command: mise use -g glow
+    after: ["mise"]

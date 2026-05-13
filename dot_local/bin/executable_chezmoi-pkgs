@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+"$EDITOR" "$(chezmoi source-path)/.chezmoidata/packages.yml"

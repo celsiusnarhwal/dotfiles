@@ -1,33 +1,43 @@
+import functools
 import json
+import typing as t
 from collections import Counter
 
-from pydantic import BaseModel, field_validator, TypeAdapter, Field
+from pydantic import BaseModel, Field, field_validator, TypeAdapter, validate_call
+
 
 class Package(BaseModel):
-	name: str
-	command: str
-	depends: list[str] = Field(default_factory=list)
+    name: str
+    command: str
+    after: list[str] = Field(default_factory=list)
 
+
+@functools.cache
 def get_packages() -> list[Package]:
-	data = json.loads($(chezmoi data))
-	package_list = TypeAdapter(list[Package]).validate_python(data["packages"])
+    data = json.loads($(chezmoi data))
+    package_list = TypeAdapter(list[Package]).validate_python(data["packages"])
 
-	return package_list
+    return package_list
 
-def install_packages(*pkgs: Package) -> None:
-	for p1 in pkgs:
-		if p1 not in installed:
-			if p1.depends:
-				dep_defs = [p2 for p2 in pkgs if p2.name in p1.depends]
-				install_packages(*dep_defs)
 
-			echo @(p1.command) | sh
-			installed.append(p1)
+@validate_call
+def get_commands(*pkgs: Package, commands: t.Annotated[list, Field(default_factory=list)], seen: t.Annotated[list, Field(default_factory=list)]) -> list[str]:
+    for p1 in pkgs:
+        if p1 not in seen:
+            seen.append(p1)
 
-installed = []
+            after_pkgs = [next(p2 for p2 in get_packages() if p2.name == after) for after in p1.after]
+            commands = get_commands(*after_pkgs, commands=commands, seen=seen)
+
+            commands.append(p1.command)
+
+    return commands
+
 
 for name, count in Counter(package.name for package in get_packages()).items():
-	if count > 1:
-		raise Exception(f'{count} packages named "{name}"')
+    if count > 1:
+        raise Exception(f'{count} packages named "{name}"')
 
-install_packages(*get_packages())	
+commands = get_commands(*get_packages())
+
+echo @("\n".join(commands)) | sh

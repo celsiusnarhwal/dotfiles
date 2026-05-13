@@ -4,48 +4,48 @@ packages:
 
   - name: atuin
     command: mise use -g atuin
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: starship
     command: mise use -g starship
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: uv
     command: mise use -g uv
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: bat
     command: mise use -g bat
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: eza
     command: mise use -g eza
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: pre-commit
     command: mise use -g pre-commit
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: micro
     command: mise use -g aqua:micro-editor/micro
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: gum
     command: mise use -g gum
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: gh
     command: mise use -g gh
-    depends: ["mise"]
+    after: ["mise"]
 
   - name: direnv
     command: mise use -g  direnv
-    depends: ["mise"]
+    after: ["mise"]
     
   - name: httpie
     command: uv tool install httpie
-    depends: ["uv"]
+    after: ["uv"]
 
   - name: thefuck
     command: uv tool install thefuck --with setuptools --python 3.11
-    depends: ["uv"]
+    after: ["uv"]

@@ -7,4 +7,4 @@ tmpdir=$(mktemp -d)
 cd "$tmpdir"
 
 curl -fsSL https://astral.sh/uv/install.sh | env UV_UNMANAGED_INSTALL="$tmpdir" sh
-./uvx --with pydantic xonsh $(chezmoi source-path)/.install-packages.xsh
+XONSH_SHOW_TRACEBACK=true ./uvx --with pydantic xonsh $(chezmoi source-path)/.install-packages.xsh

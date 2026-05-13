@@ -1,12 +1,16 @@
 #!/usr/bin/env -S uvx xonsh
 
-import subprocess
 import string
+import subprocess
+import sys
 from pathlib import Path
 
 new_plugin_choice = "create new plugin"
 
 cd ~/.local/bin
+
+args = sys.argv[2:]
+print(args)
 
 choices = [file.name.split("-", 1)[1] for file in Path.cwd().glob("chezmoi-*")]
 choices.sort()

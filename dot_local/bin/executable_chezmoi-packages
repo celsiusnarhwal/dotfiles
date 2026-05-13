@@ -1,5 +1,3 @@
 #!/bin/zsh
 
-fp="$(chezmoi source-path)/.chezmoidata/packages.toml"
-
-"$EDITOR" "$fp"
+"$EDITOR" "$(chezmoi source-path/.chezmoidata/packages.yml)"

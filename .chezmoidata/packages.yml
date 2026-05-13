@@ -53,3 +53,11 @@ packages:
   - name: glow
     command: mise use -g glow
     after: ["mise"]
+
+  - name: dotnet
+    command: mise use -g dotnet
+    after: ["mise"]
+
+  - name: git-credential-manager
+    command: dotnet tool install -g git-credential-manager
+    after: ["dotnet"]

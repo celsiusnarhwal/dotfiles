@@ -4,6 +4,6 @@ path+="$HOME/.local/bin"
 
 curl -fsSL https://mise.run | sh
 
-{{ range .packages }}
+{{ range .packagesyml }}
 eval "{{ . }}"
 {{ end }}

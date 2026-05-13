@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-"$EDITOR" "$(chezmoi source-path)/run_onchange_install-packages.sh.tmpl"
+"$EDITOR" "$(chezmoi source-path)/.chezmoidata/packages.toml"

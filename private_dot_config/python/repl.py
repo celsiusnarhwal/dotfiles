@@ -1,3 +1,4 @@
+import os
 import sys
 import subprocess
 
@@ -16,5 +17,12 @@ else:
             uv_args.append(arg)
         else:
             python_args.append(arg)
+
+if "--plain" in python_args:
+    for arg in "--plain", "-q":
+        python_args.remove(arg)
+        
+    uv_args = uv_args[:2]
+    os.environ.pop("PYTHONSTARTUP", None)    
 
 subprocess.run(uv_args + python_args)

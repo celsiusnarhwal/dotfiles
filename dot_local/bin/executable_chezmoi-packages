@@ -3,5 +3,3 @@
 fp="$(chezmoi source-path)/.chezmoidata/packages.toml"
 
 "$EDITOR" "$fp"
-
-chezmoi add "$fp"

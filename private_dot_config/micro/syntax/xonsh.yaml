@@ -1,0 +1,9 @@
+filetype: xonsh
+
+detect:
+    filename: "\\.xsh$"
+    header: "^#!/(.*\\s)?xonsh($|\\s.*)"
+
+rules:
+    - include: python
+    - include: shell

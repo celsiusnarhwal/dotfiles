@@ -1,6 +1,5 @@
 #!/usr/bin/env -S uvx xonsh
 
-
 import uuid
 
 if $(command -v gh-wrapper):

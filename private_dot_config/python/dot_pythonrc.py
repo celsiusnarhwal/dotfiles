@@ -5,4 +5,3 @@ try:
     sys.exit(embed())
 except ImportError:
     print("ptpython could not be started, falling back to the standard REPL.")
-    pass

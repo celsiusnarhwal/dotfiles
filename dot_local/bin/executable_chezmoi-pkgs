@@ -4,5 +4,6 @@ import sys
 
 if len(sys.argv) > 1 and sys.argv[1] == "--install" and ![@error_ignore gum confirm "Reinstall packages?"]:
 	chezmoi execute-template -f $(chezmoi source-path)/run_onchange_install_packages.sh.tmpl | sh
+	exit()
 
 "$EDITOR" "$(chezmoi source-path)/.chezmoidata/packages.yml"

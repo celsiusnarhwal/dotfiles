@@ -1,8 +1,11 @@
 #!/usr/bin/env xonsh
 
+import json
 from pathlib import Path
 
-chezmoi add @(Path.home() / file for file in $(chezmoi managed -i files).split())
+home_dir = json.loads($(chezmoi data))["chezmoi"]["homeDir"]
+
+chezmoi add @(home_dir + "/" + file for file in $(chezmoi managed -i files).split())
 
 if !(chezmoi git -- diff --quiet).returncode != 0:
 	chezmoi git -- add -A && chezmoi git -- commit --allow-empty --allow-empty-message -m ""

@@ -9,6 +9,5 @@ export VSCODE_PROJECT=$([ -n "$VSCODE_TERMINAL" ] && echo "$PWD")
 export BIN_DIR="$HOME/.local/bin"
 export EGET_BIN="$BIN_DIR"
 export PYTHONWARNINGS=ignore
-export BAT_PAGING=never
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc.py"
 export MICRO_TRUECOLOR=1

@@ -22,7 +22,7 @@ if "--plain" in python_args:
     for arg in "--plain", "-q":
         python_args.remove(arg)
         
-    uv_args = uv_args[:2]
+    uv_args = uv_args[:2] + uv_args[6:]
     os.environ.pop("PYTHONSTARTUP", None)    
 
 subprocess.run(uv_args + python_args)

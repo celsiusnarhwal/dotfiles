@@ -8,5 +8,3 @@ pager: false
 width: 80
 # show all files, including hidden and ignored.
 all: false
-
-tui: true

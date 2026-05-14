@@ -5,3 +5,5 @@ autoload -Uz compinit
 compinit -u
 
 ulimit -n 4096
+
+eval "$(thefuck --alias)"

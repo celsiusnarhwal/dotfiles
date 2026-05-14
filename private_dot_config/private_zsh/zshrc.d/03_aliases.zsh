@@ -18,7 +18,6 @@ alias pcat="bat -p"
 alias more="bat --paging=always"
 alias less="more"
 alias page="more"
-alias glow="glow -t"
 
 alias ls="eza --icons"
 alias ll="ls -lh"

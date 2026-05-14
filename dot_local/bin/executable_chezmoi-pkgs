@@ -6,4 +6,4 @@ import sys
 # 	chezmoi execute-template -f $(chezmoi source-path)/run_onchange_install_packages.sh.tmpl | sh
 # 	exit()
 
-"$EDITOR" "$(chezmoi source-path)/.chezmoidata/packages.yml"
+$EDITOR "$(chezmoi source-path)/.chezmoidata/packages.yml"

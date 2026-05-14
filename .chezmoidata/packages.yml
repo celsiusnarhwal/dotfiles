@@ -18,6 +18,10 @@ packages:
     command: mise use -g bat
     after: ["mise"]
 
+  - name: bat-extras
+    command: mise use -g bat-extras
+    after: ["bat"]
+
   - name: eza
     command: mise use -g eza
     after: ["mise"]
@@ -66,6 +70,10 @@ packages:
     command: mise exec uv -- uv tool install xonsh
     after: ["uv"]
 
-  - name: go
-    command: mise use -g go
+  - name: ripgrep
+    command: mise use -g ripgrep
+    after: ["mise"]
+
+  - name: delta
+    command: mise use -g delta
     after: ["mise"]

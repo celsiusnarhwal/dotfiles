@@ -1,3 +1,4 @@
+
 alias z="$ZDOTDIR"
 alias d="$ZDOTDIR/zshrc.d"
 alias cm="chezmoi"

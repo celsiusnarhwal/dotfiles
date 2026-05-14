@@ -1,11 +1,9 @@
 #!/usr/bin/env xonsh
 
 import json
-from pathlib import Path
 
-home_dir = json.loads($(chezmoi data))["chezmoi"]["homeDir"]
-
-print(home_dir)
+data = json.loads($(chezmoi data))
+home_dir = data["chezmoi"]["homeDir"]
 
 chezmoi add @(home_dir + "/" + file for file in $(chezmoi managed -i files).split())
 

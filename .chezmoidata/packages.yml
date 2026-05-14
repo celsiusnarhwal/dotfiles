@@ -62,10 +62,10 @@ packages:
     command: mise exec dotnet -- dotnet tool install -g git-credential-manager
     after: ["dotnet"]
 
-  - name: ruby
-    command: mise use -g ruby
-    after: ["mise"]
-
   - name: xonsh
     command: mise exec uv -- uv tool install xonsh
     after: ["uv"]
+
+  - name: go
+    command: mise use -g go
+    after: ["mise"]

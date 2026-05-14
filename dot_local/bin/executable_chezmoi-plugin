@@ -1,4 +1,4 @@
-#!/usr/bin/env -S uvx xonsh
+#!/usr/bin/env xonsh
 
 import string
 import subprocess

@@ -5,6 +5,8 @@ from pathlib import Path
 
 home_dir = json.loads($(chezmoi data))["chezmoi"]["homeDir"]
 
+print(home_dir)
+
 chezmoi add @(home_dir + "/" + file for file in $(chezmoi managed -i files).split())
 
 if !(chezmoi git -- diff --quiet).returncode != 0:

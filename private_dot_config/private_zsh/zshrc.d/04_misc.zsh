@@ -7,3 +7,4 @@ compinit -u
 ulimit -n 4096
 
 eval "$(thefuck --alias)"
+eval "$(batman --export-env)"

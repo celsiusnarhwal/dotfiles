@@ -11,3 +11,5 @@ export PYTHONWARNINGS=ignore
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc.py"
 export MICRO_TRUECOLOR=1
 export LESS="-R"
+export FORCE_COLOR=1
+export CLICOLOR_FORCE=1

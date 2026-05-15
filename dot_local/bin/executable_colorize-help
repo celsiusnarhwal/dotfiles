@@ -1,9 +1,0 @@
-#!/usr/bin/env xonsh
-
-import re
-import sys
-
-helptext = sys.stdin.read()
-
-language = "txt" if re.search(r"\x1b\[[0-9;]*m", helptext) else "help"
-echo -E  @(helptext) | bat --plain --paging auto --language @(language)

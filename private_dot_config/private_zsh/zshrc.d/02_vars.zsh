@@ -5,7 +5,6 @@ export EDITOR=micro
 export GPG_TTY=$(tty)
 export DIRENV_LOG_FORMAT=""
 export JETBRAINS_PROJECT=$([ -d ".idea" ] && echo "$PWD")
-export VSCODE_PROJECT=$([ -n "$VSCODE_TERMINAL" ] && echo "$PWD")
 export BIN_DIR="$HOME/.local/bin"
 export EGET_BIN="$BIN_DIR"
 export PYTHONWARNINGS=ignore

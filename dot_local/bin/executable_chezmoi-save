@@ -5,7 +5,7 @@ import json
 data = json.loads($(chezmoi data))
 home_dir = data["chezmoi"]["homeDir"]
 
-echo @(home_dir + "/" + file for file in $(chezmoi managed -i files).split())
+chezmoi add @(home_dir + "/" + file for file in $(chezmoi managed -i files).split())
 
 if !(chezmoi git -- diff --quiet).returncode != 0:
 	echo "new commit"

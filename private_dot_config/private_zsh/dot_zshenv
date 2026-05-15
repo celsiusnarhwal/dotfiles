@@ -5,6 +5,8 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export ANTIDOTE_DIR=$HOME/.antidote
 
+path+="$HOME/.local/bin"
+
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi

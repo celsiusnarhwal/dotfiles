@@ -5,4 +5,6 @@ git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
 git config --global delta.side-by-side true
 git config --global delta.line-numbers true
+git config --global delta.paging always
+git config --global delta.hunk-header-decoration-style plain
 git config --global merge.conflictStyle zdiff3

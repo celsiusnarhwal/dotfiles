@@ -10,3 +10,4 @@ export EGET_BIN="$BIN_DIR"
 export PYTHONWARNINGS=ignore
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc.py"
 export MICRO_TRUECOLOR=1
+export LESS="-R"

@@ -38,4 +38,4 @@ alias py="python"
 alias pch="pre-commit"
 alias exa="eza"
 
-alias -g -- --help="--help 2>&1 | colorize-help"
+alias -g -- --help="--help 2>&1 | bat --plain --language help --paging auto"

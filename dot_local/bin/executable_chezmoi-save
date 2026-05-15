@@ -8,6 +8,7 @@ home_dir = data["chezmoi"]["homeDir"]
 chezmoi add @(home_dir + "/" + file for file in $(chezmoi managed -i files).split())
 
 if !(chezmoi git -- diff --quiet).returncode != 0:
+	echo "new commit"
 	chezmoi git -- add -A && chezmoi git -- commit
 
 chezmoi git push

@@ -30,7 +30,7 @@ def ask_for_selection() -> str:
 
 			continue
 
-	return selection
+	return selection or None
 
 selections = sys.argv[1:] or [ask_for_selection()]
 

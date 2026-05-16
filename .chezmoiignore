@@ -9,5 +9,4 @@ LICENSE.md
 **/.zsh_sessions
 **..zcalc_history
 **/.iterm2
-**/zshrc.d/99_local.zsh
 **/.*_cache

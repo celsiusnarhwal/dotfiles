@@ -37,6 +37,8 @@ selections = sys.argv[1:] or [ask_for_selection()]
 if not selections:
 	exit()
 
+print(selections)
+
 filenames = [$(echo chezmoi-@(s)) for s in selections]
 
 $EDITOR @(filenames)

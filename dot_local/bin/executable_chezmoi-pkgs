@@ -5,7 +5,7 @@ import sys
 if len(sys.argv) > 1 and sys.argv[1] == "--install":
 	if ![@error_ignore gum confirm "Reinstall packages?"]:
 		rendered = $(chezmoi execute-template -f $(chezmoi source-path)/.chezmoiscripts/run_onchange_00_install_packages.sh.tmpl)
-		echo $rendered
+		echo "$rendered"
 
 	exit()
 

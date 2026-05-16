@@ -1,0 +1,38 @@
+#!/usr/bin/env xonsh
+
+import json
+import sys
+
+from pathlib import Path
+
+order = ["path", "vars", "aliases", "functions", "misc"]
+
+valid_args = ', '.join(order)
+
+aliases = {
+	"path": ["paths"],
+	"functions": ["funcs"],
+}
+
+if len(sys.argv) < 2:
+	print(f"Provide an argument. Acceptable arguments are: {valid_args}")
+	exit()	
+
+file = sys.argv[1]
+
+for name, alts in aliases.items():
+	if file in alts:
+		file = name
+
+if file not in order:
+	print(f"Invalid argument. Acceptable arguments are: {valid_args}")
+	exit()
+	
+
+data = json.loads($(chezmoi data))
+hostname = data["chezmoi"]["hostname"]
+
+filename = str(order.index(file) + 1).zfill(2) + "_" + file + ".zsh"
+fp = Path($ZSH_CUSTOM) / "local" / hostname / filename
+
+$EDITOR @(fp) @(sys.argv[2:]) 

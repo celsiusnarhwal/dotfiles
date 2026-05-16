@@ -77,3 +77,7 @@ packages:
   - name: delta
     command: mise use -g delta
     after: ["mise"]
+
+  - name: jq
+    command: mise use -g jq
+    after: ["mise"]

@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+$EDITRO $(chezmoi source-path)/.chezmoidata/hosts.yml

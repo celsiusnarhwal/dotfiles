@@ -81,3 +81,7 @@ packages:
   - name: jq
     command: mise use -g jq
     after: ["mise"]
+
+  - name: sd
+    command: mise use -g sd
+    after: ["mise"]

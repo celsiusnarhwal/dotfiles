@@ -93,4 +93,8 @@ packages:
   - name: moor
     command: mise use -g go:github.com/walles/moor/v2/cmd/moor@latest
     after: ["go"]
+
+  - name: lazygit
+    command: mise use -g lazygit
+    after: ["mise"]
     

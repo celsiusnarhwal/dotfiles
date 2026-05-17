@@ -1,0 +1,5 @@
+[tools."github:walles/moor"]
+version = "latest"
+
+[tools."github:walles/moor".platforms]
+linux-arm64 = { asset_pattern = "*linux-arm*" }

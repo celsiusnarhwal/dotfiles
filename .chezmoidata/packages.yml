@@ -85,3 +85,10 @@ packages:
   - name: sd
     command: mise use -g sd
     after: ["mise"]
+
+  - name: go
+    command: mise use -g go
+    after: ["mise"]
+
+  - name: moor
+    

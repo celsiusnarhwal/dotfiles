@@ -13,4 +13,4 @@ export MICRO_TRUECOLOR=1
 export FORCE_COLOR=1
 export CLICOLOR_FORCE=1
 export PAGER="moor"
-export MOOR="-no-linenumbers -wrap -statusbar bold"
+export MOOR="-no-linenumbers -wrap -quit-if-one-screen"

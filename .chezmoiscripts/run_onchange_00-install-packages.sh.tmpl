@@ -2,6 +2,8 @@
 
 # {{ .packages }}
 
+export PATH="$HOME/.local/bin:$PATH"
+
 tmpdir=$(mktemp -d)
 
 cd "$tmpdir"

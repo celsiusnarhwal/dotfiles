@@ -28,7 +28,6 @@ alias lla="ls -lha"
 
 alias up="cd .."
 alias rm="rm -i"
-alias r="exec zsh"
 alias home="cd $HOME"
 alias root="cd /"
 alias img="imgcat"

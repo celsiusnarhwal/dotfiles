@@ -1,0 +1,12 @@
+#!/bin/zsh
+##? TODO: Add description. Use ##? comments for funchelp docs.
+
+###
+### TODO: write your autoload function here.
+### WARNING: Do not add a 'function r() {}' wrapper for autoloads.
+###
+
+# vim: ft=zsh sw=2 ts=2 et
+
+atuin history end $(atuin history start r) --exit 0
+exec zsh

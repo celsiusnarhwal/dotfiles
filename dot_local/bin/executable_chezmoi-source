@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # ---
-# Alias for chezmoi source-path.
+# Alias for `chezmoi source-path`.
 # ---
 
 chezmoi source-path

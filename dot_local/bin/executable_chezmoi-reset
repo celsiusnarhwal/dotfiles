@@ -11,7 +11,7 @@ if $(command -v gh-wrapper):
 
 cd $(chezmoi source-path)
 
-repo_name=$(gh repo view --json nameWithOwner --jq .nameWithOwner)
+repo_name = $(gh repo view --json nameWithOwner --jq .nameWithOwner)
 
 if ![gum confirm f"Reset the commit history for  {repo_name}?"].returncode == 0:
 	git checkout --orphan @(uuid.uuid4().hex)

@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# ---
 # View the diff between the target state and the source state.
+# ---
 
 chezmoi diff --reverse

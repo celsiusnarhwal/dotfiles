@@ -45,4 +45,3 @@ filepaths = [Path(fn) for fn in filenames if Path(fn).exists()]
 
 if filepaths:
 	chmod +x @(filepaths)
-	chezmoi add @(filepaths)

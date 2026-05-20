@@ -7,4 +7,4 @@ home_dir = data["chezmoi"]["homeDir"]
 
 chezmoi add @(home_dir + "/" + file for file in $(chezmoi managed -i files).split())
 
-# chezmoi git push
+chezmoi git push

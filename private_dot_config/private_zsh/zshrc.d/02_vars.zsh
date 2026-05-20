@@ -14,4 +14,5 @@ export FORCE_COLOR=1
 export CLICOLOR_FORCE=1
 export BAT_PAGER="moor"
 export PAGER="bat"
-export MOOR="-no-linenumbers -wrap -quit-if-one-screen"
+export MOOR="-no-linenumbers -wrap"
+export MISE_EXPERIMENTAL=true

@@ -1,5 +1,9 @@
 #!/usr/bin/env xonsh
 
+# ---
+# Commit and push all local changes.
+# ---
+
 import json
 
 data = json.loads($(chezmoi data))

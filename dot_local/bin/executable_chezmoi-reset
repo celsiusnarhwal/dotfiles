@@ -1,5 +1,9 @@
 #!/usr/bin/env xonsh
 
+# ---
+# Reset Chezmoi's commit history.
+# ---
+
 import uuid
 
 if $(command -v gh-wrapper):

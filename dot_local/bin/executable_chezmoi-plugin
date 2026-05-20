@@ -1,5 +1,9 @@
 #!/usr/bin/env xonsh
 
+# ---
+# Create a new Chezmoi plugin or edit an existing one.
+# ---
+
 import string
 import subprocess
 import sys

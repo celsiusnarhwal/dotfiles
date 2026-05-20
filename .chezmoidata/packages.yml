@@ -63,7 +63,7 @@ packages:
     after: ["mise"]
 
   - name: git-credential-manager
-    command: mise use -g dotnet:git-credential-manager
+    command: mise use -g dotnet:git-credential-manager && mise exec dotnet:git-credential-manager -- git-credential-manager configure
     after: ["dotnet"]
 
   - name: xonsh

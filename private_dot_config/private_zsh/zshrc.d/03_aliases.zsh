@@ -17,6 +17,7 @@ alias cat="bat"
 alias pcat="bat -p"
 alias more="bat --paging=always"
 alias page="more"
+alias tail="moor -follow"
 alias rg="batgrep"
 alias man="BAT_PAGING=always man"
 

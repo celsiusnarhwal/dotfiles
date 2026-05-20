@@ -1,5 +1,0 @@
-{{ range .hosts }}
-{{ if ne . $.chezmoi.hostname }}
-.config/zsh/local/{{ . }}
-{{ end }}
-{{ end }}

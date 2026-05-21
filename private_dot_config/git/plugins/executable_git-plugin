@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# ---
+# Manage Git plugins.
+# ---
+
+plugin git "$@"

@@ -16,3 +16,5 @@ export BAT_PAGER="moor"
 export PAGER="env BAT_STYLE=plain bat"
 export MOOR="-no-linenumbers -wrap"
 export MISE_EXPERIMENTAL=true
+export FZF_DEFAULT_COMMAND="fd --type file"
+export FZF_DEFAULT_OPTS="--preview 'fzf-preview {}'"

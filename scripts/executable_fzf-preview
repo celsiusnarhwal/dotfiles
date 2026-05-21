@@ -1,0 +1,15 @@
+#!/usr/bin/env -S uvx --with binaryornot xonsh
+
+import sys
+from pathlib import Path
+
+from binaryornot.check import is_binary
+
+file = Path(sys.argv[1])
+
+if is_binary(file):
+	print("---No preview available---")
+elif file.suffix in [".md", ".markdown"]:
+	script -q -c "glow " + @(file)
+else:
+	bat --plain --color always @(file)

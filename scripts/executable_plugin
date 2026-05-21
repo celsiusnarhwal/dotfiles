@@ -1,0 +1,114 @@
+#!/usr/bin/env -S uvx --with typer --with platformdirs --with tomlkit xonsh
+
+# ---
+# Create a new Chezmoi plugin or edit an existing one.
+# ---
+
+import os
+import string
+import subprocess
+import sys
+import typing as t
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+import rich
+import tomlkit as toml
+import typer
+from platformdirs import user_config_path
+from rich.panel import Panel
+
+app = typer.Typer(add_completion=False)
+
+def ask_for_selection(prefix: str) -> str:
+	new_plugin_choice = "create new plugin"
+
+	choices = [file.name.split("-", 1)[1] for file in Path.cwd().glob(f"{prefix}-*")]
+	choices.sort()
+	choices.append(new_plugin_choice)
+
+	selection = $(echo @("\n".join(choices)) | @error_ignore fzf --preview f"bat --plain --color always {prefix}-{{}} 2>/dev/null")
+
+	if selection == new_plugin_choice:
+		while True:
+			print("What should the plugin be called?")
+			selection = $(@error_ignore gum input)
+
+			if selection in choices:
+				print(f'\nThere\'s already a plugin called "{selection}".\n')
+			elif not set(selection).issubset(string.ascii_lowercase + string.digits):
+				print("\nPlugin names may only contain lowercase letters and digits.\n")
+			else:
+				break
+
+			continue
+
+	return selection
+
+
+def export_env():
+	additions = []
+
+	for app, directory in config.items():
+		directory = directory.expanduser()
+
+		if not directory.exists():
+			fail(f"[blue]{directory}[/], the plugin directory for [bold cyan]{app}[/], does not exist.")
+		
+		additions.append(directory)
+	
+	print("export PATH=" + ":".join(additions) + ":" + $PATH)
+
+	raise typer.Exit()
+
+
+
+def fail(message: str, title: str = "Error"):
+	panel = Panel(message, title=title, title_align="left", border_style="red")
+	rich.print(panel)
+
+	raise typer.Exit(1)
+
+
+@app.command()
+def main(
+	application: t.Annotated[str, typer.Argument(help="The name of the application to manage plugins for.")], 
+	plugins: t.Annotated[list[str], typer.Argument(default_factory=list, show_default=False, help="The names of the plugins to manage. Do not include the application prefix.")], 
+	export_env: t.Annotated[bool, typer.Option("--export-env", is_eager=True, help="Add all plugin directories to the system path.")] = False
+	):
+	"""
+	Manage plugins for programs that support them.
+	"""
+	if export_env:
+		export_env()
+
+	directory = Path(config[application]).expanduser()
+
+	if not directory.exists():
+		fail(f"[blue]{directory}[/], the plugin directory for [bold cyan]{application}[/], does not exist.")
+
+	cd @(directory)
+
+	selections = plugins or [ask_for_selection(application)]
+
+	if not any(selections):
+		exit()
+
+	filenames = [$(echo @(application)-@(s)) for s in selections]
+
+	$EDITOR @(filenames)
+
+	filepaths = [Path(fn) for fn in filenames if Path(fn).exists()]
+
+	if filepaths:
+		chmod +x @(filepaths)
+
+if __name__ == "__main__":
+	config_file = (os.getenv("PLUGIN_MANAGER_CONFIG") or user_config_path("plugin-manager") / "config.toml")
+
+	if not config_file.is_file():
+		fail(f"No configuration file exists at [blue]{config_file}[/].")
+
+	config = toml.load(config_file.open())
+	
+	app()

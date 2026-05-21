@@ -97,3 +97,7 @@ packages:
   - name: lazygit
     command: mise use -g lazygit
     after: ["mise"]
+
+  - name: fzf
+    command: mise use -g fzf
+    after: ["mise"]

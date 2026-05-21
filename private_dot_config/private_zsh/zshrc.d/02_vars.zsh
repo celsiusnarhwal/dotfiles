@@ -13,6 +13,6 @@ export MICRO_TRUECOLOR=1
 export FORCE_COLOR=1
 export CLICOLOR_FORCE=1
 export BAT_PAGER="moor"
-export PAGER="bat"
+export PAGER="env BAT_STYLE=plain bat"
 export MOOR="-no-linenumbers -wrap"
 export MISE_EXPERIMENTAL=true

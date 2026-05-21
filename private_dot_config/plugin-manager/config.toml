@@ -1,0 +1,2 @@
+chezmoi = "~/.local/share/chezmoi/.chezmoiplugins"
+git = "~/.config/git/plugins"

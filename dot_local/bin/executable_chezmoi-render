@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-# ---
-# Alias for `chezmoi execute-template`.
-# ---
-
-chezmoi execute-template "$@"

@@ -1,0 +1,15 @@
+#!/usr/bin/env xonsh
+
+# ---
+# Interactively edit the package manifest.
+# ---
+
+import sys
+
+if len(sys.argv) > 1 and sys.argv[1] == "--install":
+	if ![@error_ignore gum confirm "Reinstall packages?"]:
+		echo $(chezmoi execute-template -f $(chezmoi source-path)/.chezmoiscripts/run_onchange_00-install-packages.sh.tmpl) | sh
+
+	exit()
+
+$EDITOR $(chezmoi source-path)/.chezmoidata/packages.yml

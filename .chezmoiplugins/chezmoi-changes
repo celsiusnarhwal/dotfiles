@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# ---
+# Alias for `chezmoi diff --reverse`.
+# ---
+
+chezmoi diff --reverse

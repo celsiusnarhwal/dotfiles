@@ -1,0 +1,51 @@
+#!/usr/bin/env xonsh
+
+# ---
+# Create a new Chezmoi plugin or edit an existing one.
+# ---
+
+import string
+import subprocess
+import sys
+from pathlib import Path
+
+new_plugin_choice = "create new plugin"
+
+cd $(chezmoi source-path)/.chezmoiplugins
+
+def ask_for_selection() -> str:
+	choices = [file.name.split("-", 1)[1] for file in Path.cwd().glob("chezmoi-*")]
+	choices.sort()
+	choices.append(new_plugin_choice)
+
+	selection = $(echo @("\n".join(choices)) | @error_ignore gum filter)
+
+	if selection == new_plugin_choice:
+		while True:
+			print("What should the plugin be called?")
+			selection = $(@error_ignore gum input)
+
+			if selection in choices:
+				print(f'\nThere\'s already a plugin called "{selection}".\n')
+			elif not set(selection).issubset(string.ascii_lowercase + string.digits):
+				print("\nPlugin names may only contain lowercase letters and digits.\n")
+			else:
+				break
+
+			continue
+
+	return selection
+
+selections = sys.argv[1:] or [ask_for_selection()]
+
+if not any(selections):
+	exit()
+
+filenames = [$(echo chezmoi-@(s)) for s in selections]
+
+$EDITOR @(filenames)
+
+filepaths = [Path(fn) for fn in filenames if Path(fn).exists()]
+
+if filepaths:
+	chmod +x @(filepaths)
